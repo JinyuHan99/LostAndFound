@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>消息窗口</title>
+</head>
+
+
+<link rel="stylesheet" href="../plugins/elementui/index.css">
+
+<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+    body {
+        margin: 0px;
+        margin: 0px;
+        background: #b4bccc
+    }
+</style>
+<body>
+<div align="center">
+    用户<span id="userName"></span>与用户<span id="toUserName"></span>的会话窗口
+    <!--  <input type="button" onclick="con()" value="连接对方">-->
+    <hr>
+    <table class="table">
+        <tr>
+            <td>
+                <input type="text" value="78269" style="display: none" id="accentID">
+                <div style="height: 560px">
+                    <div id="accentinformation"></div>
+                    <div id="div">
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><textarea id="text"></textarea></td>
+            <td><input type="button"
+                       style="width: 100px;height: 40px;background: #31acfb;border-radius:15px;border: none"
+                       onclick="send()" value="发送"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
+<script src="../js/vue.js"></script>
+<script src="../js/index.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script src="../js/jquery.cookie.js"></script>
+<script>
+    var websocket = null;
+    var userID = $.cookie("userID");
+    var toUserID = $.cookie("toUserID");
+    var userName = $.cookie("userName");
+    var toUserName = $.cookie("toUserName");
+    document.getElementById('userName').innerHTML = userName;
+    document.getElementById('toUserName').innerHTML = toUserName;
+    con();
+
+    function con() {
+        //判断当前websocket是否处于连接状态
+        try {
+            if (websocket.readyState == 1) {
+                websocket.close();
+            }
+        } catch (e) {
+        }
+        //判断当前浏览器是否支持WebSocket
+        if ('WebSocket' in window) {
+            websocket = new WebSocket("ws://47.99.75.161:80/api/websocket/" + userID + "/" + toUserID);// 改成你的地址
+        } else {
+            alert('当前浏览器不支持websocket发起的会话，请尝试更换浏览器！')
+        }
+        //连接发生错误的回调方法
+        websocket.onerror = function () {
+            alert("连接发生错误！")
+        };
+        //连接成功建立的回调方法
+        websocket.onopen = function () {
+            // document.getElementById("accentinformation").innerHTML =toUserName;
+        }
+        //接收到消息的回调方法
+        websocket.onmessage = function (event) {
+            var str = event.data;
+            jieshou(str)
+        }
+
+    }
+
+    //连接关闭的回调方法
+    websocket.onclose = function () {
+        alert("WebSocket连接关闭");
+    }
+
+    //监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
+    window.onbeforeunload = function () {
+        closeWebSocket();
+    }
+
+    //关闭WebSocket连接
+    function closeWebSocket() {
+        websocket.close();
+        alert('websocket.close: 关闭websocket连接')
+    }
+
+    //发送消息
+    function send() {
+        var message = document.getElementById('text').value;
+
+        try {
+            websocket.send('{"msg":"' + message + '"}');
+            fasong(message);
+        } catch (err) {
+            console.error("websocket.send: " + message + " 失败");
+        }
+    }
+
+    function fasong(data) {
+        var str = document.getElementById("text");
+        var div = document.getElementById("div");
+        if (str.value != "") {
+            var str0 = "";
+            var count = 0;
+            var str1 = Array.from(data);
+            for (var i = 0; i < str1.length; i++) {
+                if (i > 25) {
+                    str0 += "<br/>"
+                    i = 0;
+                }
+                if (count == str1.length) {
+                    break;
+                }
+                str0 += str1[count];
+                count++;
+            }
+            div.innerHTML +=
+                "<div class='div'>" +
+                "<ul class='right'>" +
+                "<li class='cueright'><p>" + str0 + "</p></li>" +
+                "<li><img src='../img/spongebob.jpg'></li>" +
+                "</ul>" +
+                "</div>";
+        }
+        div.scrollTop = div.scrollHeight;
+        document.getElementById("text").value = ""
+    }
+
+    function jieshou(data) {
+        // console.log(data)
+        var messageObj = JSON.parse(data)
+
+        // console.log(messageObj);
+        //判断是否为系统消息
+        if(Object.prototype.toString.call(messageObj) === "[object Object]" && messageObj.code == "system"){
+            // alert(messageObj.msg)
+            console.log(messageObj.msg)
+        }
+        //判断是否为历史记录
+        else if(Object.prototype.toString.call(messageObj) === "[object Array]"){
+            for(let i =0;i<messageObj.length;i++){
+                //用户发出的
+                if(messageObj[i].from_user == userID && messageObj[i].to_user == toUserID){
+                    //显示在右边
+                    right(messageObj[i].content)
+                }
+                //用户收到的
+                else if(messageObj[i].from_user == toUserID && messageObj[i].to_user == userID){
+                    //显示在左边
+                    // console.log(messageObj.msg)
+                    // console.log(Object.prototype.toString.call(messageObj.msg))
+                    left(messageObj[i].content)
+                }
+            }
+            // console.log(messageObj)
+        }
+
+        //判断是否为用户消息
+        else if(Object.prototype.toString.call(messageObj) === "[object Object]" && messageObj.code == "message"){
+            left(messageObj.msg)
+        }}
+function left(msg){
+    var div = document.getElementById("div");
+    var str0 = "";
+    var count = 0;
+    var str1 = Array.from(msg);
+    for (var i = 0; i < str1.length; i++) {
+        if (i > 25) {
+            str0 += "<br/>"
+            i = 0;
+        }
+        if (count == str1.length) {
+            break;
+        }
+        str0 += str1[count];
+        count++;
+    }
+    div.innerHTML +=
+        "<div class=\"div\">\n" +
+        "        <ul class=\"left\">\n" +
+        "            <li><img src='../img/patrick.jpg'></li>\n" +
+        "            <li class=\"cueleft\"><p>" + str0 + "</p></li>\n" +
+        "        </ul>\n" +
+        "    </div>";
+    document.getElementById("text").value = "";
+    div.scrollTop = div.scrollHeight;
+}
+
+function right(msg){
+    var str = msg;
+    var div = document.getElementById("div");
+    if (str.value != "") {
+        var str0 = "";
+        var count = 0;
+        var str1 = Array.from(msg);
+        for (var i = 0; i < str1.length; i++) {
+            if (i > 25) {
+                str0 += "<br/>"
+                i = 0;
+            }
+            if (count == str1.length) {
+                break;
+            }
+            str0 += str1[count];
+            count++;
+        }
+        div.innerHTML +=
+            "<div class='div'>" +
+            "<ul class='right'>" +
+            "<li class='cueright'><p>" + str0 + "</p></li>" +
+            "<li><img src='../img/spongebob.jpg'></li>" +
+            "</ul>" +
+            "</div>";
+    }
+    div.scrollTop = div.scrollHeight;
+    // document.getElementById("text").value = ""
+}
+</script>

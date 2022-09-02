@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6e1538dd-3fef-4a2f-9f2e-9192a0a55c09" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2C6D7y1ZonIMH3BQyC4O2DX84cP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/jinyuh/IdeaProjects/leetcode",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "Docker",
+    "spring.configuration.checksum": "89bdd5732473216f1dcd64da3b10258e"
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jinyuh\IdeaProjects\Springboot01\src\main\resources\static\pages" />
+      <recent name="C:\Users\jinyuh\IdeaProjects\Springboot01\src\main\resources\bak" />
+      <recent name="C:\Users\jinyuh\IdeaProjects" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jinyuh\IdeaProjects\Springboot01\src\main\resources\bak" />
+      <recent name="C:\Users\jinyuh\IdeaProjects\Springboot01\src\main\resources\static\img" />
+      <recent name="C:\Users\jinyuh\IdeaProjects\Springboot01\src\main\resources\static\pages" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Docker.springboot01">
+    <configuration name="Springboot01ApplicationTests.testFindUnread" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Springboot01ApplicationTests" />
+      <option name="METHOD_NAME" value="testFindUnread" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Springboot01ApplicationTests.testRecordGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Springboot01ApplicationTests" />
+      <option name="METHOD_NAME" value="testRecordGet" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Springboot01ApplicationTests.testSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Springboot01ApplicationTests" />
+      <option name="METHOD_NAME" value="testSave" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Springboot01ApplicationTests.testUserGetAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Springboot01ApplicationTests" />
+      <option name="METHOD_NAME" value="testUserGetAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Springboot01ApplicationTests.testUserGetById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Springboot01ApplicationTests" />
+      <option name="METHOD_NAME" value="testUserGetById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Springboot01Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
+      <module name="springboot_01" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Springboot01Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="springboot01" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="containerName" value="springboot01" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="80" />
+                <option name="hostPort" value="8080" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean package -U -DskipTests" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Docker.springboot01" />
+      <item itemvalue="JUnit.Springboot01ApplicationTests.testFindUnread" />
+      <item itemvalue="JUnit.Springboot01ApplicationTests.testRecordGet" />
+      <item itemvalue="JUnit.Springboot01ApplicationTests.testSave" />
+      <item itemvalue="JUnit.Springboot01ApplicationTests.testUserGetAll" />
+      <item itemvalue="JUnit.Springboot01ApplicationTests.testUserGetById" />
+      <item itemvalue="Spring Boot.Springboot01Application" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Springboot01ApplicationTests.testFindUnread" />
+        <item itemvalue="JUnit.Springboot01ApplicationTests.testSave" />
+        <item itemvalue="JUnit.Springboot01ApplicationTests.testRecordGet" />
+        <item itemvalue="JUnit.Springboot01ApplicationTests.testUserGetById" />
+        <item itemvalue="JUnit.Springboot01ApplicationTests.testUserGetAll" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e1538dd-3fef-4a2f-9f2e-9192a0a55c09" name="Changes" comment="" />
+      <created>1658113977154</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658113977154</updated>
+      <workItem from="1658113978344" duration="683000" />
+      <workItem from="1658114683331" duration="670000" />
+      <workItem from="1658128659960" duration="13978000" />
+      <workItem from="1658200055745" duration="7970000" />
+      <workItem from="1658218841795" duration="12078000" />
+      <workItem from="1658240521717" duration="14000" />
+      <workItem from="1658283741423" duration="875000" />
+      <workItem from="1658285083394" duration="34381000" />
+      <workItem from="1658457930246" duration="9102000" />
+      <workItem from="1658971316276" duration="236000" />
+      <workItem from="1658971597522" duration="39923000" />
+      <workItem from="1659140740576" duration="15833000" />
+      <workItem from="1659166094806" duration="3000" />
+      <workItem from="1659229982022" duration="10409000" />
+      <workItem from="1659404518001" duration="77000" />
+      <workItem from="1659663182140" duration="762000" />
+      <workItem from="1661499981863" duration="1714000" />
+      <workItem from="1661829982749" duration="10447000" />
+      <workItem from="1661927559669" duration="9318000" />
+      <workItem from="1662010870985" duration="7139000" />
+      <workItem from="1662080251164" duration="1108000" />
+      <workItem from="1662083528938" duration="7000" />
+      <workItem from="1662083557344" duration="329000" />
+      <workItem from="1662084222475" duration="1224000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

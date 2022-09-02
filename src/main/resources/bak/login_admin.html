@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///D:/web%E8%84%9A%E6%9C%AC/WEB/login.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>登陆</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+         
+        html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url(static/pages/Desert.jpg) no-repeat 0px 0px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+        }
+         
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }a
+         
+        #loginDiv {
+            width: 37%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            background-color: rgba(75, 81, 95, 0.3);
+            box-shadow: 7px 7px 17px rgba(52, 56, 66, 0.5);
+            border-radius: 5px;
+        }
+         
+        #name_trip {
+            margin-left: 50px;
+            color: red;
+        }
+         
+        p {
+            margin-top: 30px;
+            margin-left: 20px;
+            color: azure;
+        }
+         
+        input {
+            margin-left: 15px;
+            border-radius: 5px;
+            border-style: hidden;
+            height: 30px;
+            width: 140px;
+           background-color: rgba(216, 191, 216, 0.5);
+            outline: none;
+            color: #f0edf3;
+            padding-left: 10px;
+        }
+         
+        .button {
+            border-color: cornsilk;
+            background-color: rgba(100, 149, 237, .7);
+            color: aliceblue;
+            border-style: hidden;
+            border-radius: 5px;
+            width: 100px;
+            height: 31px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<script type="text/javascript" src="../static/js/jquery.min.js"></script>
+<script type="text/javascript" >
+    function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: '/user/login',
+            contentType: "application/json",
+            data:JSON.stringify({
+                "username": username,
+                "password": password}),
+            success: function (result) {
+                if (result.code == 20071) {
+                    alert("登陆成功");
+                    window.location.href = "items_client.html";
+                }else {
+                    alert(result.msg)
+                }
+            }
+        })
+    }
+</script>
+<body>
+    <div id="loginDiv">
+        <form id="log-form" >
+            <h1 style="text-align: center;color: aliceblue;">登陆</h1>
+            <p>用户名:<input id="username" name="username" type="text"><label id="name_trip"></label></p>
+ 
+            <p>密&nbsp&nbsp码:  <input id="password" name="password" type="password"><label id="password_trip"></label></p>
+
+            <div style="text-align: center;margin-top: 30px;">
+                <button id="submit" class="button" type="button" onclick=login()>登陆</button>
+                <input type="reset" class="button" value="重置">
+            </div>
+            <p style="text-align: center;">
+                <a href="../static/pages/register_client.html">没有账号，去注册</a>
+            </p>
+        </form>
+    </div>
+ 
+ 
+</body></html>
