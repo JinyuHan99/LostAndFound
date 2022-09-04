@@ -71,7 +71,7 @@
         }
         //判断当前浏览器是否支持WebSocket
         if ('WebSocket' in window) {
-            websocket = new WebSocket("ws://47.99.75.161:80/api/websocket/" + userID + "/" + toUserID);// 改成你的地址
+            websocket = new WebSocket("ws://127.0.0.1:80/api/websocket/" + userID + "/" + toUserID);// 改成你的地址
         } else {
             alert('当前浏览器不支持websocket发起的会话，请尝试更换浏览器！')
         }

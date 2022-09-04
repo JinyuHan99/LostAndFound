@@ -4,7 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e1538dd-3fef-4a2f-9f2e-9192a0a55c09" name="Changes" comment="" />
+    <list default="true" id="6e1538dd-3fef-4a2f-9f2e-9192a0a55c09" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bak/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pages/websocketTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bak/MessagePushController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bak/MessagePushController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/config/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/config/InterceptorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/config/RedisConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/Code.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/Code.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/interceptor/LoginInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/listener/RequestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bak/RequestListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/redisreceiver/RedisReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/redisreceiver/RedisReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/util/SpringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bak/SpringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/websocketserver/WebSocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/websocketserver/WebSocketServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/pages/Desert.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/pages/login_client.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/login_client.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/pages/message.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/message.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/pages/register_client.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/register_client.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/bak/MessagePushController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/config/InterceptorConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/config/InterceptorConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/config/RedisConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controller/Code.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/controller/Code.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/interceptor/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/interceptor/LoginInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/listener/RequestListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/redisreceiver/RedisReceiver$SessionInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/redisreceiver/RedisReceiver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/util/SpringUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/websocketserver/WebSocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/websocketserver/WebSocketServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/pages/Desert.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/pages/login_client.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/pages/login_client.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/pages/message.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/pages/message.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/pages/register_client.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/pages/register_client.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/springboot_01-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/springboot_01-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/Springboot01ApplicationTests.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +52,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -39,25 +78,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/jinyuh/IdeaProjects/leetcode",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "Docker",
-    "spring.configuration.checksum": "89bdd5732473216f1dcd64da3b10258e"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jinyuh/IdeaProjects/leetcode&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Docker&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;89bdd5732473216f1dcd64da3b10258e&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -68,12 +107,14 @@
       <recent name="C:\Users\jinyuh\IdeaProjects" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jinyuh\IdeaProjects\Springboot01\src\main\java\com\example\bak" />
+      <recent name="C:\Users\jinyuh\IdeaProjects\Springboot01\src\main\java\com\example\listener" />
       <recent name="C:\Users\jinyuh\IdeaProjects\Springboot01\src\main\resources\bak" />
       <recent name="C:\Users\jinyuh\IdeaProjects\Springboot01\src\main\resources\static\img" />
       <recent name="C:\Users\jinyuh\IdeaProjects\Springboot01\src\main\resources\static\pages" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.springboot01">
+  <component name="RunManager" selected="Spring Boot.Springboot01Application">
     <configuration name="Springboot01ApplicationTests.testFindUnread" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="springboot_01" />
       <extension name="coverage">
@@ -231,11 +272,23 @@
       <workItem from="1662080251164" duration="1108000" />
       <workItem from="1662083528938" duration="7000" />
       <workItem from="1662083557344" duration="329000" />
-      <workItem from="1662084222475" duration="1224000" />
+      <workItem from="1662084222475" duration="3633000" />
+      <workItem from="1662281403993" duration="5993000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

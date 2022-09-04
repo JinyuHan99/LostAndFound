@@ -20,6 +20,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         } else {
             //判断用户是否登录
             System.out.println("user hasn't logged in");
+            System.out.println(request.getSession().getAttribute("username"));
             if (request.getSession().getAttribute("username") != null) {
                 //说明已经登录，放行
                 return true;

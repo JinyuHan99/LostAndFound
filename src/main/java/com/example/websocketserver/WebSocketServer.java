@@ -1,19 +1,14 @@
 package com.example.websocketserver;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.domain.Record;
 import com.example.listener.SubscribeListener;
 import com.example.service.RecordService;
-import com.example.util.SpringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.data.redis.listener.PatternTopic;
-import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.Topic;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.http.HttpSession;
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
@@ -39,7 +34,7 @@ public class WebSocketServer {
      * 因为@ServerEndpoint不支持注入，所以使用SpringUtils获取IOC实例
      * recordService使用 setRecordService注入
      */
-    private RedisMessageListenerContainer redisMessageListenerContainer = SpringUtils.getBean(RedisMessageListenerContainer.class);
+
 
     //静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。
     private static AtomicInteger onlineCount = new AtomicInteger(0);
@@ -53,7 +48,6 @@ public class WebSocketServer {
     private String toUserID = "";
 
     private SubscribeListener subscribeListener;
-    private ApplicationContext applicationContext;
     private static RecordService recordService;
     @Autowired
     public void setRecordService(RecordService recordService){
@@ -75,8 +69,7 @@ public class WebSocketServer {
         subscribeListener.setSession(session);
         List<Topic> list = new ArrayList<>();
         list.add(new PatternTopic("test"));
-        //设置订阅topic
-        redisMessageListenerContainer.addMessageListener(subscribeListener, list);
+
         //发送连接信息
         try {
             sendMessage("{\"msg\":\"Connection succeeded. Loading chat history...\",\"code\":\"system\"}"); //服务器主动推送的消息
@@ -108,7 +101,6 @@ public class WebSocketServer {
     public void onClose() {
         webSocketSet.remove(this);  // 从set中删除
         subOnlineCount();              // 在线数减1
-        redisMessageListenerContainer.removeMessageListener(subscribeListener);
         // 断开连接情况下，更新主板占用情况为释放
         log.info("释放的sid=" + userID + "的客户端");
         releaseResource();

@@ -15,7 +15,6 @@ public class InterceptorConfig implements WebMvcConfigurer {
         List<String> list = new ArrayList<String>();
         list.add("/user/login");
         list.add("/user/register");
-        list.add("api/websocket/**");
         registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**").excludePathPatterns(list);
     }
 }
