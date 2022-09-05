@@ -1,7 +1,6 @@
 package com.example.websocketserver;
 import com.alibaba.fastjson.JSONObject;
 import com.example.domain.Record;
-import com.example.listener.SubscribeListener;
 import com.example.service.RecordService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,18 +35,17 @@ public class WebSocketServer {
      */
 
 
-    //静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。
+    //静态变量，用来记录当前在线连接数。应该把它设计成线程安全的，使用了AtomicInteger保证线程安全
     private static AtomicInteger onlineCount = new AtomicInteger(0);
-    //concurrent包的线程安全Set，用来存放每个客户端对应的WebSocket对象。
+    //concurrent包的线程安全Set，用来存放每个客户端对应的WebSocket对象
     private static CopyOnWriteArraySet<WebSocketServer> webSocketSet = new CopyOnWriteArraySet<>();
-    // private static ConcurrentHashMap<String, WebSocketServer> webSocketSet = new ConcurrentHashMap<>();
+
     //与某个客户端的连接会话，需要通过它来给客户端发送数据
     private Session session;
     //接收sid
     private String userID = "";
     private String toUserID = "";
 
-    private SubscribeListener subscribeListener;
     private static RecordService recordService;
     @Autowired
     public void setRecordService(RecordService recordService){
@@ -65,8 +63,6 @@ public class WebSocketServer {
         this.toUserID = toUserID;
         webSocketSet.add(this);     // 加入set中
         addOnlineCount();           // 在线数加1
-        subscribeListener = new SubscribeListener();
-        subscribeListener.setSession(session);
         List<Topic> list = new ArrayList<>();
         list.add(new PatternTopic("test"));
 
@@ -203,7 +199,7 @@ public class WebSocketServer {
      * @return
      */
     public static void addOnlineCount() {
-        onlineCount.getAndIncrement();
+        onlineCount.getAndIncrement();   //AtomicInteger.getAndIncrement()方法的作用是先获取当前的值，然后在自增,返回的是自增前的值，保证线程安全
     }
 
     /**

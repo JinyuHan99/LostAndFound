@@ -27,4 +27,6 @@ public class Code {
     public static final Integer MESSAGE_OK = 20091;
     public static final Integer MESSAGE_ERR = 20090;
 
+    public static final Integer USERNAME_EXIST_ERR= 20101;
+
 }

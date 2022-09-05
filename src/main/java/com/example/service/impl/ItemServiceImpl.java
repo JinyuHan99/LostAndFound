@@ -42,4 +42,14 @@ public class ItemServiceImpl implements ItemService {
     public List<Item> getByName(String name) {
         return itemDao.getByName(name);
     }
+
+    @Override
+    public List<Item> getByContactUserId(Integer contact_user_id) {
+        return itemDao.getByContactUserId(contact_user_id);
+    }
+
+    @Override
+    public List<Item> getMyByName(String name, Integer contact_user_id) {
+        return itemDao.getMyByName(name,contact_user_id);
+    }
 }

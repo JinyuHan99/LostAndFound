@@ -42,7 +42,7 @@ public interface UserService {
      */
     public User getById(Integer id);
 
-
+    public User getByUsername(String userame);
     public List<User> getAll();
 }
 

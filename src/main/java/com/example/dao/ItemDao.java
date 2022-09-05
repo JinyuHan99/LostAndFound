@@ -22,10 +22,16 @@ public interface ItemDao {
     @Select("select * from item where id=#{id}")
     Item getById(Integer id);
 
-    @Select("select item.id,item.type,item.name,item.description,item.contact_user_id,user.username as contact_username from item right join user on user.id=item.contact_user_id")
+    @Select("select item.id,item.type,item.name,item.description,item.contact_user_id,user.username as contact_username from item inner join user on user.id=item.contact_user_id")
     List<Item> getAll();
 
     @Select("select * from item where name like '%${name}%'")
     List<Item> getByName(String name);
+
+    @Select("select item.id,item.type,item.name,item.description,item.contact_user_id,user.username as contact_username from item right join user on user.id=item.contact_user_id where contact_user_id=#{contact_user_id}")
+    List<Item> getByContactUserId(Integer contact_user_id);
+
+    @Select("select item.id,item.type,item.name,item.description,item.contact_user_id,user.username as contact_username from item right join user on user.id=item.contact_user_id where contact_user_id=#{contact_user_id} and item.name like '%${name}%'")
+    List<Item> getMyByName(String name, Integer contact_user_id);
 }
 

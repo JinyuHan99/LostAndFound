@@ -24,6 +24,10 @@ public class UserController {
      */
     @PostMapping("/register")
     public Result register(@RequestBody User user) {
+        User userCheck= userService.getByUsername(user.getUsername());
+        if(userCheck!=null){
+            return new Result(Code.USERNAME_EXIST_ERR,false,"用户名已存在，请重新输入");
+        }
         boolean flag = userService.register(user);
         return  new Result((flag?Code.REGISTER_OK: Code.REGISTER_ERR),flag);
     }
@@ -41,9 +45,9 @@ public class UserController {
             response.addCookie(cookie1);
             System.out.println(cookie.getValue());
             System.out.println(cookie1.getValue());
-            return new Result(Code.LOGIN_OK,true);
+            return new Result(Code.LOGIN_OK,true,"登录成功");
         }else{
-            return new Result(Code.LOGIN_ERR,false);
+            return new Result(Code.LOGIN_ERR,false,"用户名或密码错误");
         }
 
     }

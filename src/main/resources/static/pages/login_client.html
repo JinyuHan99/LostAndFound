@@ -75,7 +75,8 @@
 </head>
 <!--<script type="text/javascript" src="../js/jquery.min.js"></script>-->
 <!--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>-->
-<script src="../js/jquery.min.js"></script>
+<!--<script src="/js/jquery.min.js"></script>-->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
     function login() {
         var username = document.getElementById("username").value;
@@ -83,7 +84,7 @@
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: '/user/login',
+            url: "/user/login",
             contentType: "application/json",
             data: JSON.stringify({
                 "username": username,
@@ -93,7 +94,7 @@
                 if (result.code == 20071) {
                     console.log(result.data);
                     // alert("登陆成功");
-                    window.location.href = "items_client.html";
+                    window.location.href = "items_client.html?"+$("#username").val()+"";
                 } else {
                     alert(result.msg)
                 }

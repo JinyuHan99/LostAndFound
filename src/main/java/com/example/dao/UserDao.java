@@ -28,5 +28,7 @@ public interface UserDao {
     User getByAll(User user);
 
     @Select("select * from user where username=#{username}")
-    User getByUsername(User user);
+    User getByUsername(String userame);
+
+
 }

@@ -1,13 +1,18 @@
 package com.example.controller;
 
 import com.example.domain.Item;
+import com.example.domain.User;
+import com.example.exception.SystemException;
 import com.example.service.ItemService;
 
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
+
+import static com.example.controller.Code.SELECTBYNAME_ERR;
 
 @RestController
 @RequestMapping("/items")
@@ -19,7 +24,15 @@ public class ItemController {
     private UserService userService;
 
     @PostMapping
-    public Result save(@RequestBody Item item) {
+    public Result save(@RequestBody Item item, HttpSession session) {
+//        System.out.println(session.getAttribute("username").toString());
+        String username = session.getAttribute("username").toString();
+        User user = userService.getByUsername(username);
+        if(user!=null){
+            item.setContact_user_id(user.getId());
+        }else{
+            throw new SystemException("系统异常", new RuntimeException("用户不存在"),SELECTBYNAME_ERR);
+        }
         boolean flag = itemService.save(item);
         return  new Result((flag?Code.SAVE_OK: Code.SAVE_ERR),flag);
     }
@@ -61,12 +74,30 @@ public class ItemController {
         return  new Result(code,itemList,s);
     }
 
-    @GetMapping("/byName/{name}")
-    public Result getByName(@PathVariable String name){
-//        System.out.println(name==null?"name is null":"get name");
-        List<Item> itemList = itemService.getByName(name);
-        Integer code = itemList!= null? Code.SELECTBYNAME_OK:Code.SELECTBYNAME_ERR;
+    @GetMapping("/my")
+    public Result getAllMyItems(HttpSession session) {
+        String username = session.getAttribute("username").toString();
+        User user = userService.getByUsername(username);
+        List<Item> itemList = itemService.getByContactUserId(user.getId());
+        Integer code = itemList!= null? Code.SELECTALL_OK:Code.SELECTALL_ERR;
         String s = itemList!= null? "":"查询失败";
         return  new Result(code,itemList,s);
-    };
+    }
+    @GetMapping("/byName/{name}")
+    public Result getByName(@PathVariable String name){
+        List<Item> itemList = itemService.getByName(name);
+        Integer code = itemList!= null? Code.SELECTBYNAME_OK: SELECTBYNAME_ERR;
+        String s = itemList!= null? "":"查询失败";
+        return  new Result(code,itemList,s);
+    }
+
+    @GetMapping("/my/byName/{name}")
+    public Result getMyByName(@PathVariable String name,HttpSession session){
+        String username = session.getAttribute("username").toString();
+        User user = userService.getByUsername(username);
+        List<Item> itemList = itemService.getMyByName(name,user.getId());
+        Integer code = itemList!= null? Code.SELECTBYNAME_OK: SELECTBYNAME_ERR;
+        String s = itemList!= null? "":"查询失败";
+        return  new Result(code,itemList,s);
+    }
 }
