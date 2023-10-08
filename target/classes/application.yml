@@ -5,7 +5,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql:///db1?useSSL=false&useUnicode=true&characterEncoding=UTF-8  #172.17.0.1为docker容器中应用访问宿主机的ip地址
     username: root
-    password: 2031589031/h  //服务器mysql密码2031589031,docker123456
+    password: ***  //服务器mysql密码***,docker***
   redis:
     port: 6379
     host: 127.0.0.1  #172.17.0.1为docker容器中应用访问宿主机的ip地址
